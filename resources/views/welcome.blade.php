@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <section class="banner">
+    <section class="banner" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-11 col-12">
@@ -39,7 +39,7 @@
     </section>
 
 
-    <section class="benefits">
+    <section class="benefits" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="row text-center pb-70">
                 <div class="col-lg-12 col-12 header-wrap">
@@ -100,7 +100,7 @@
         </div>
     </section>
 
-    <section class="steps">
+    <section class="steps" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="row item-step pb-70">
                 <div class="col-lg-6 col-12 text-center">
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <section class="pricing">
+    <section class="pricing" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="row pb-70">
                 <div class="col-lg-5 col-12 header-wrap copywriting">
@@ -325,7 +325,7 @@
         </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="row text-center pb-70">
                 <div class="col-lg-12 col-12 header-wrap">
