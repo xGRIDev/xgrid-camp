@@ -15,78 +15,42 @@
             <div class="row my-5">
                 <table class="table">
                     <tbody>
+                        @forelse( $checkouts as $checkout)
                         <tr class="align-middle">
                             <td width="18%">
                                 <img src="/assets/images/item_bootcamp.png" height="120" alt="">
                             </td>
                             <td>
                                 <p class="mb-2">
-                                    <strong>Gila Belajar</strong>
+                                    <strong>{{ $checkout->Camp->title }}</strong>
                                 </p>
                                 <p>
-                                    September 24, 2021
+                                    {{ $checkout->created_at->format('M d, Y')}}
                                 </p>
                             </td>
                             <td>
-                                <strong>$280,000</strong>
+                                <strong>{{ $checkout->Camp->price }}</strong>
                             </td>
                             <td>
-                                <strong>Waiting for Payment</strong>
+                                @if ($checkout->is_paid )
+                                    <strong class="text-success">Payment Success</strong>
+                                    @else
+                                    <strong class="">Waiting For Payment</strong>
+                                    @endif
                             </td>
                             <td>
-                                <a href="#" class="btn btn-primary">
-                                    Get Invoice
+                                <a href="https://wa.me/08xxxxxx?text=Hi, Saya ingin bertanya tentang kelas ini {{ $checkout->Camp->title }}" class="btn btn-primary">
+                                    Contact Support
                                 </a>
                             </td>
                         </tr>
-                        <tr class="align-middle">
-                            <td width="18%">
-                                <img src="/assets/images/item_bootcamp.png" height="120" alt="">
-                            </td>
-                            <td>
-                                <p class="mb-2">
-                                    <strong>Gila Belajar</strong>
-                                </p>
-                                <p>
-                                    September 24, 2021
-                                </p>
-                            </td>
-                            <td>
-                                <strong>$280,000</strong>
-                            </td>
-                            <td>
-                                <strong><span class="text-green">Payment Success</span></strong>
-                            </td>
-                            <td>
-                                <a href="#" class="btn btn-primary">
-                                    Get Invoice
-                                </a>
+                        @empty
+                        <tr>
+                            <td colspan="5">
+                                <h3>No Data</h3>
                             </td>
                         </tr>
-                        <tr class="align-middle">
-                            <td width="18%">
-                                <img src="/assets/images/item_bootcamp.png" height="120" alt=" ">
-                            </td>
-                            <td>
-                                <p class=" mb-2 ">
-                                    <strong>Gila Belajar</strong>
-                                </p>
-                                <p>
-                                    September 24, 2021
-                                </p>
-                            </td>
-                            <td>
-                                <strong>$280,000</strong>
-                            </td>
-                            <td>
-                                <strong><span class="text-red ">Canceled</span></strong>
-                            </td>
-                            <td>
-                                <a href="# " class="btn btn-primary ">
-                                    Get Invoice
-                                </a>
-                            </td>
-                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
