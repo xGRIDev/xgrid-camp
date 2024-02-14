@@ -36,10 +36,12 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <form action="" method="post">
-                                        @csrf
-                                        <button class="btn btn-primary btn-sm">Set To Paid</button>
-                                    </form>
+                                    @if(!$checkout->is_paid)
+                                        <form action="{{ route('admin.checkout.update', $checkout->id) }}" method="POST">
+                                            @csrf
+                                            <button class="btn btn-primary btn-sm">Set To Paid</button>
+                                        </form>
+                                    @endif
                                 </td>
                             </tr>
                             @empty
