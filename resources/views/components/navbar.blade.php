@@ -32,7 +32,7 @@
                         @endif
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="right:0; left:auto;" >
                             <li>
-                                <a href="" class="dropdown-item">My Dashboard</a>      
+                                <a href="{{ route('dashboard') }}" class="dropdown-item">My Dashboard</a>      
                             </li>
                             <li>
                                 <a href="" class="dropdown-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign Out</a>      
