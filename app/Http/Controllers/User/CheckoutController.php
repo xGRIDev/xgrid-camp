@@ -168,7 +168,7 @@ class CheckoutController extends Controller
             "first_name" => $checkout->User->first_name,
             "last_name" => "",
             "email" => $checkout->User->email,
-            "phone" => $checout->User->phone,
+            "phone" => $checkout->User->phone,
             "billing_address" => $userData,
             "shipping_address" => $userData,
         ];
@@ -182,7 +182,7 @@ class CheckoutController extends Controller
 
         try {
             //GET SNAP PAYMENT PAGE URL
-            $paymentUrl = \Midtrans\Snap::createTransaction($params)->redirect_url;
+            $paymentUrl = \Midtrans\Snap::createTransaction($$midtrans_params)->redirect_url;
             $checkout->midtrans_url = $paymentUrl;
             $checkout->save();
 
