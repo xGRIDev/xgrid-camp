@@ -66,6 +66,8 @@ class CheckoutController extends Controller
         $user->email = $data['email'];
         $user->name = $data['name'];
         $user->occupation = $data['occupation'];
+        $user->address = $data['address'];
+        $user->phone = $data['phone'];
         $user->save();
 
         //create checkout
@@ -147,7 +149,7 @@ class CheckoutController extends Controller
             'gross_amount' => $price
         ];
 
-        $item_details = [
+        $item_details[] = [
             'id' => $orderId,
             'price' => $price,
             'quantity' => 1,
@@ -165,7 +167,7 @@ class CheckoutController extends Controller
         ];
 
         $customer_details = [
-            "first_name" => $checkout->User->first_name,
+            "first_name" => $checkout->User->name,
             "last_name" => "",
             "email" => $checkout->User->email,
             "phone" => $checkout->User->phone,
