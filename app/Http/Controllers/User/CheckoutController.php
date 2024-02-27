@@ -197,8 +197,9 @@ class CheckoutController extends Controller
     public function midtransCallback(Request $request)
     {
         $notif = $request->method() == 'POST' ? new Midtrans\Notification() : Midtrans\Transaction::status($request->order_id);
+//        $notif = new Midtrans\Notification();
 
-        $transaction_status = $notif->transliterator_status;
+        $transaction_status = $notif->transaction_status;
         $fraud = $notif->fraud_status;
 
         $checkout_id = explode('-', $notif->order_id)[0];
