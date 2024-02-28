@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-8 offset-2">
-            <div class="card">
+            <div class="card mt-4 shadow-lg" data-aos="fade-up" data-aos-duration="1000">
                 <div class="card-header">
                     My Camp
                 </div>
