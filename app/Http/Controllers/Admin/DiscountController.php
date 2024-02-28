@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Discount;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Discount\Store;
+use App\Http\Requests\Admin\Discount\Update;
 class DiscountController extends Controller
 {
     /**
@@ -15,7 +16,10 @@ class DiscountController extends Controller
      */
     public function index()
     {
-        return view('admin.discount.index');
+        $discounts = Discount::all();
+        return view('admin.discount.index', [
+            'discounts' => $discounts,
+        ]);
     }
 
     /**
@@ -61,7 +65,9 @@ class DiscountController extends Controller
      */
     public function edit(Discount $discount)
     {
-        //
+        return view('admin.discount.edit', [
+            'discount' => $discount,
+        ]);
     }
 
     /**
@@ -73,8 +79,10 @@ class DiscountController extends Controller
      */
     public function update(Request $request, Discount $discount)
     {
-        //
-    }
+        $discount->update($request->all());
+        $request->session()->flash('success', 'Discount {$discount->name} has been updated');
+
+        return redirect( route('admin.discount.index'));    }
 
     /**
      * Remove the specified resource from storage.
