@@ -90,8 +90,10 @@ class DiscountController extends Controller
      * @param  \App\Models\Discount  $discount
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Discount $discount)
+    public function destroy(Request $request, Discount $discount)
     {
-        //
+        $discount->delete();
+        $request->session()->flash('error', 'Discount {$discount->name} has been deleted');
+        return redirect( route('admin.discount.index'));
     }
 }
