@@ -24,7 +24,7 @@ class Store extends FormRequest
      */
     public function rules()
     {
-        $expiredValidation = date('Y-m', time());
+//        $expiredValidation = date('Y-m', time());
 
         return [
             'name' => 'required|string',
@@ -34,7 +34,8 @@ class Store extends FormRequest
 //            'expired' => 'required|date|date_format:Y-m|after_or_equal:'.$expiredValidation,
 //            'cvc' => 'required|numeric|digits:3',
             'phone' => 'required|string',
-            'address' => 'required|string'
+            'address' => 'required|string',
+            'discount' => 'nullable|string|exists:discounts,code,deleted_at,NULL'
         ];
     }
 }
