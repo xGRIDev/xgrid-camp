@@ -48,6 +48,35 @@
                         </ul>
                     </a>
                 </div>
+                <div class="dropdown">
+        <img class="search" src="search.svg" />
+        <input type="text" placeholder="Setting" />
+        <div class="menu">
+          <div class="menu-content">
+            <button>
+            <i class="bi bi-speedometer"></i>
+             <span>
+              My Dashboard
+             </span>
+             <span>1920 / 1080 px</span>
+            </button>
+            <button>
+            <i class="bi bi-percent"></i>
+              <span>
+                Discount
+              </span>
+              <span>1920 / 1080 px</span>
+             </button>
+             <button>
+             <i class="bi bi-box-arrow-left"></i>
+              <span>
+                logout
+              </span>
+              <span>1940 / 788 px</span>
+             </button>
+          </div>
+        </div>
+      </div>
                 @else
                 <div class="d-flex">
                     <a href="{{ route('login') }}" class="btn btn-master btn-secondary me-3">
